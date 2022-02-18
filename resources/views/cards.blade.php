@@ -20,186 +20,61 @@
 <body>
     <div class="container p-5">
         <div class="row">
-            <div class="col-md-6 cards">
-                <img class="bg" src="{{ asset('images/card-bg.jpg') }}" alt="">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col"><img src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                        <div class="col-md-6 p-0">
-                            <div class="text">
-                                <p><b >Name: </b> Innocent Ebubechukwu Marvellous</p>
-                                <p><b>L.G.A: </b>Umuahia North</p>
-                                <p><b>Date of Reg: </b> 12-06-2021</p>
+            @forelse ($data as $users)
+                <div class="col-md-6 cards">
+                    <img class="bg" src="{{ asset('images/card-bg.jpg') }}" alt="">
+                    <div class="card-body">
+                        <div class="row">
+                             @php
+                                $email = $users->email;
+                                $phone = $users->inputPhone;
+                                $name = $users->fname.' '.$users->lname;
+                                $qrcontent = 'Name: '.$name.',  Email: '.$email.', Phone: '.$phone;
+                                
+                            @endphp
+                            <table>
+                                <tr>
+                                    <td>
+                                        <img src="{{ asset('images/userpics/'.$users->userprofile) }}" alt="">
+                                    </td>
+                                    <td>
+                                        <div class="text">
+                                            <p><b >Name: </b> {{ $users->fname }} {{ $users->lname }}</p>
+                                            <p><b>L.G.A: </b>{{ $users->lga }}</p>
+                                            <p><b>Date of Reg: </b> {{ $users->dateofissue }}</p>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <img class="qrcode" src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate($qrcontent)) !!} ">
+                                    </td>
+                                </tr>
+                            </table>
+                            {{-- <div class="col p-0"><img src="{{ asset('images/userpics/'.$users->userprofile) }}" alt=""></div>
+                            <div class="col-md-6 p-0">
+                                <div class="text">
+                                    <p><b >Name: </b> {{ $users->fname }} {{ $users->lname }}</p>
+                                    <p><b>L.G.A: </b>{{ $users->lga }}</p>
+                                    <p><b>Date of Reg: </b> {{ $users->dateofissue }}</p>
+                                </div>
                             </div>
+                            @php
+                                $email = $users->email;
+                                $phone = $users->inputPhone;
+                                $name = $users->fname.' '.$users->lname;
+                                $qrcontent = 'Name: '.$name.',  Email: '.$email.', Phone: '.$phone;
+                                
+                            @endphp
+                            <div class="col"><img class="qrcode" src="data:image/png;base64, {!! base64_encode(QrCode::format('png')->size(100)->generate($qrcontent)) !!} "></div> --}}
                         </div>
-                        <div class="col"><img class="qrcode" src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
                     </div>
-                </div>
-                <div class="card-footer">
-                </div>
-            </div>
-            <div class="col-md-6 cards">
-                <img class="bg" src="{{ asset('images/card-bg.jpg') }}" alt="">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col"><img src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                        <div class="col-md-6 p-0">
-                            <div class="text">
-                                <p><b >Name: </b> Innocent Ebubechukwu Marvellous</p>
-                                <p><b>L.G.A: </b>Umuahia North</p>
-                                <p><b>Date of Reg: </b> 12-06-2021</p>
-                            </div>
-                        </div>
-                        <div class="col"><img class="qrcode" src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
+                    <div class="card-footer">
                     </div>
+                    {{ $data->links() }}
                 </div>
-                <div class="card-footer">
-                </div>
-            </div>
-            <div class="col-md-6 cards">
-                <img class="bg" src="{{ asset('images/card-bg.jpg') }}" alt="">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col"><img src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                        <div class="col-md-6 p-0">
-                            <div class="text">
-                                <p><b >Name: </b> Innocent Ebubechukwu Marvellous</p>
-                                <p><b>L.G.A: </b>Umuahia North</p>
-                                <p><b>Date of Reg: </b> 12-06-2021</p>
-                            </div>
-                        </div>
-                        <div class="col"><img class="qrcode" src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div>
-            </div>
-            <div class="col-md-6 cards">
-                <img class="bg" src="{{ asset('images/card-bg.jpg') }}" alt="">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col"><img src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                        <div class="col-md-6 p-0">
-                            <div class="text">
-                                <p><b >Name: </b> Innocent Ebubechukwu Marvellous</p>
-                                <p><b>L.G.A: </b>Umuahia North</p>
-                                <p><b>Date of Reg: </b> 12-06-2021</p>
-                            </div>
-                        </div>
-                        <div class="col"><img class="qrcode" src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div>
-            </div>
-            <div class="col-md-6 cards">
-                <img class="bg" src="{{ asset('images/card-bg.jpg') }}" alt="">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col"><img src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                        <div class="col-md-6 p-0">
-                            <div class="text">
-                                <p><b >Name: </b> Innocent Ebubechukwu Marvellous</p>
-                                <p><b>L.G.A: </b>Umuahia North</p>
-                                <p><b>Date of Reg: </b> 12-06-2021</p>
-                            </div>
-                        </div>
-                        <div class="col"><img class="qrcode" src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div>
-            </div>
-            <div class="col-md-6 cards">
-                <img class="bg" src="{{ asset('images/card-bg.jpg') }}" alt="">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col"><img src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                        <div class="col-md-6 p-0">
-                            <div class="text">
-                                <p><b >Name: </b> Innocent Ebubechukwu Marvellous</p>
-                                <p><b>L.G.A: </b>Umuahia North</p>
-                                <p><b>Date of Reg: </b> 12-06-2021</p>
-                            </div>
-                        </div>
-                        <div class="col"><img class="qrcode" src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div>
-            </div>
-            <div class="col-md-6 cards">
-                <img class="bg" src="{{ asset('images/card-bg.jpg') }}" alt="">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col"><img src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                        <div class="col-md-6 p-0">
-                            <div class="text">
-                                <p><b >Name: </b> Innocent Ebubechukwu Marvellous</p>
-                                <p><b>L.G.A: </b>Umuahia North</p>
-                                <p><b>Date of Reg: </b> 12-06-2021</p>
-                            </div>
-                        </div>
-                        <div class="col"><img class="qrcode" src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div>
-            </div>
-            <div class="col-md-6 cards">
-                <img class="bg" src="{{ asset('images/card-bg.jpg') }}" alt="">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col"><img src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                        <div class="col-md-6 p-0">
-                            <div class="text">
-                                <p><b >Name: </b> Innocent Ebubechukwu Marvellous</p>
-                                <p><b>L.G.A: </b>Umuahia North</p>
-                                <p><b>Date of Reg: </b> 12-06-2021</p>
-                            </div>
-                        </div>
-                        <div class="col"><img class="qrcode" src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div>
-            </div>
-            <div class="col-md-6 cards">
-                <img class="bg" src="{{ asset('images/card-bg.jpg') }}" alt="">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col"><img src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                        <div class="col-md-6 p-0">
-                            <div class="text">
-                                <p><b >Name: </b> Innocent Ebubechukwu Marvellous</p>
-                                <p><b>L.G.A: </b>Umuahia North</p>
-                                <p><b>Date of Reg: </b> 12-06-2021</p>
-                            </div>
-                        </div>
-                        <div class="col"><img class="qrcode" src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div>
-            </div>
-            <div class="col-md-6 cards">
-                <img class="bg" src="{{ asset('images/card-bg.jpg') }}" alt="">
-                <div class="card-body">
-                    <div class="row">
-                        <div class="col"><img src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                        <div class="col-md-6 p-0">
-                            <div class="text">
-                                <p><b >Name: </b> Innocent Ebubechukwu Marvellous</p>
-                                <p><b>L.G.A: </b>Umuahia North</p>
-                                <p><b>Date of Reg: </b> 12-06-2021</p>
-                            </div>
-                        </div>
-                        <div class="col"><img class="qrcode" src="{{ asset('images/bg/job-1-bg.jpg') }}" alt=""></div>
-                    </div>
-                </div>
-                <div class="card-footer">
-                </div>
-            </div>
+            @empty
+                
+            @endforelse
+            
         </div>
     </div>
 </body>

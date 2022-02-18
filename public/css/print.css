@@ -1,4 +1,8 @@
 @media print{
+  .card{
+    /* background-image: url(../images/card-bg.jpg)!important;
+    background-size: cover; */
+  }
   .visible-print{
     display: inherit !important;
   }

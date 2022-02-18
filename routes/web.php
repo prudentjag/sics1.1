@@ -21,4 +21,5 @@ Route::controller(idController::class)->group(function () {
     Route::get('/', 'index');
     Route::get('/ids', 'idtables');
     Route::get('/sort', 'sortby');
+    Route::post('/create', 'create');
 });

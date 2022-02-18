@@ -23,7 +23,9 @@ class User extends Authenticatable
         'email',
         'inputPhone',
         'gender',
+        'lga',
         'userprofile',
+        'dateofissue',
         'password',
     ];
 
