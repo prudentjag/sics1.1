@@ -24,7 +24,6 @@ class User extends Authenticatable
         'inputPhone',
         'gender',
         'userprofile',
-        
         'password',
     ];
 

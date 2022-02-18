@@ -15,5 +15,9 @@ $(document).ready(function() {
     }
   });
 
+  $('idform').on('submit', function (p) {
+    p.preventDefault();
+    
+  })
 
 })

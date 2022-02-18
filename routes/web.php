@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\idController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('cards');
-});
-
-Route::get('qrcode', function(){
-    
+// Route::get('/', function () {
+//     return view('cards');
+// });
+Route::controller(idController::class)->group(function () {
+    Route::get('/', 'index');
+    Route::get('/ids', 'idtables');
+    Route::get('/sort', 'sortby');
 });
