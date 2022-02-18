@@ -1,31 +1,218 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="en">
+  
+<!-- Mirrored from uigaint.com/demo/html/anfra_2/job-2/job-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Jan 2022 23:48:12 GMT -->
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <title>Laravel</title>
+    <title>SICS 2.1</title>
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
 
-        <!-- Styles -->
-        <style>
-            /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */html{line-height:1.15;-webkit-text-size-adjust:100%}body{margin:0}a{background-color:transparent}[hidden]{display:none}html{font-family:system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;line-height:1.5}*,:after,:before{box-sizing:border-box;border:0 solid #e2e8f0}a{color:inherit;text-decoration:inherit}svg,video{display:block;vertical-align:middle}video{max-width:100%;height:auto}.bg-white{--bg-opacity:1;background-color:#fff;background-color:rgba(255,255,255,var(--bg-opacity))}.bg-gray-100{--bg-opacity:1;background-color:#f7fafc;background-color:rgba(247,250,252,var(--bg-opacity))}.border-gray-200{--border-opacity:1;border-color:#edf2f7;border-color:rgba(237,242,247,var(--border-opacity))}.border-t{border-top-width:1px}.flex{display:flex}.grid{display:grid}.hidden{display:none}.items-center{align-items:center}.justify-center{justify-content:center}.font-semibold{font-weight:600}.h-5{height:1.25rem}.h-8{height:2rem}.h-16{height:4rem}.text-sm{font-size:.875rem}.text-lg{font-size:1.125rem}.leading-7{line-height:1.75rem}.mx-auto{margin-left:auto;margin-right:auto}.ml-1{margin-left:.25rem}.mt-2{margin-top:.5rem}.mr-2{margin-right:.5rem}.ml-2{margin-left:.5rem}.mt-4{margin-top:1rem}.ml-4{margin-left:1rem}.mt-8{margin-top:2rem}.ml-12{margin-left:3rem}.-mt-px{margin-top:-1px}.max-w-6xl{max-width:72rem}.min-h-screen{min-height:100vh}.overflow-hidden{overflow:hidden}.p-6{padding:1.5rem}.py-4{padding-top:1rem;padding-bottom:1rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.pt-8{padding-top:2rem}.fixed{position:fixed}.relative{position:relative}.top-0{top:0}.right-0{right:0}.shadow{box-shadow:0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.06)}.text-center{text-align:center}.text-gray-200{--text-opacity:1;color:#edf2f7;color:rgba(237,242,247,var(--text-opacity))}.text-gray-300{--text-opacity:1;color:#e2e8f0;color:rgba(226,232,240,var(--text-opacity))}.text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.text-gray-500{--text-opacity:1;color:#a0aec0;color:rgba(160,174,192,var(--text-opacity))}.text-gray-600{--text-opacity:1;color:#718096;color:rgba(113,128,150,var(--text-opacity))}.text-gray-700{--text-opacity:1;color:#4a5568;color:rgba(74,85,104,var(--text-opacity))}.text-gray-900{--text-opacity:1;color:#1a202c;color:rgba(26,32,44,var(--text-opacity))}.underline{text-decoration:underline}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.w-5{width:1.25rem}.w-8{width:2rem}.w-auto{width:auto}.grid-cols-1{grid-template-columns:repeat(1,minmax(0,1fr))}@media (min-width:640px){.sm\:rounded-lg{border-radius:.5rem}.sm\:block{display:block}.sm\:items-center{align-items:center}.sm\:justify-start{justify-content:flex-start}.sm\:justify-between{justify-content:space-between}.sm\:h-20{height:5rem}.sm\:ml-0{margin-left:0}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pt-0{padding-top:0}.sm\:text-left{text-align:left}.sm\:text-right{text-align:right}}@media (min-width:768px){.md\:border-t-0{border-top-width:0}.md\:border-l{border-left-width:1px}.md\:grid-cols-2{grid-template-columns:repeat(2,minmax(0,1fr))}}@media (min-width:1024px){.lg\:px-8{padding-left:2rem;padding-right:2rem}}@media (prefers-color-scheme:dark){.dark\:bg-gray-800{--bg-opacity:1;background-color:#2d3748;background-color:rgba(45,55,72,var(--bg-opacity))}.dark\:bg-gray-900{--bg-opacity:1;background-color:#1a202c;background-color:rgba(26,32,44,var(--bg-opacity))}.dark\:border-gray-700{--border-opacity:1;border-color:#4a5568;border-color:rgba(74,85,104,var(--border-opacity))}.dark\:text-white{--text-opacity:1;color:#fff;color:rgba(255,255,255,var(--text-opacity))}.dark\:text-gray-400{--text-opacity:1;color:#cbd5e0;color:rgba(203,213,224,var(--text-opacity))}.dark\:text-gray-500{--tw-text-opacity:1;color:#6b7280;color:rgba(107,114,128,var(--tw-text-opacity))}}
-        </style>
+    <!-- External Css -->
+    <link rel="stylesheet" href="{{ asset('assets/css/line-awesome.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
 
-        <style>
-            body {
-                font-family: 'Nunito', sans-serif;
-            }
-        </style>
-    </head>
-    <body class="antialiased">
-        <div class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-          
-            {!! QrCode::size(100)->generate('my name is innocent'); !!}
-            <p>Scan me to return to the original page.</p>
-    
+    <!-- Custom Css --> 
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/main.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/job-2.css') }}">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet">
+
+    <!-- Favicon -->
+    <link rel="icon" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../images/icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../images/icon-114x114.png">
+  </head>
+  <body>
+    <div class="ugf-wraper">
+      <div class="ugf-nav-wrap">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-xl-6 col-lg-7 col-sm-8">
+              <div class="ugf-nav">
+                <div class="logo-wrap">
+                  <img src="images/logo.png" class="logo" alt="">
+                  <img src="images/logo-half.png" class="logo-half" alt="">
+                </div>
+                <div class="job-wrap">
+                  <h3>Each one aid one Jamb ID system</h3>
+                  <ul>
+                    <li><img src="images/clock.png" alt=""><a href="/ids">Cards</a> </li>
+                    <li><img src="images/clock.png" alt="">sort cards</li>
+                  </ul>
+                </div>
+                {{-- <p class="salary">Salary Range: <strong>$(500 - 1500)</strong></p> --}}
+              </div>
+            </div>
+          </div>
         </div>
-    </body>
+      </div>
+      {{-- <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-xl-6 col-lg-7 col-sm-8">
+            <div class="ufg-job-application-wrapper">
+              <form action="" class="job-application-form" id="idform" enctype='multipart/form-data'>
+                @csrf
+                <div class="input-type-block">
+                  <h4>Personal information</h4>
+                  <div class="row">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="input-label" for="fName"><span>*</span>First Name</label>
+                        <input type="text" class="form-control" id="fname" name="fname" placeholder="Jhon">
+                        <span class="text-danger error-text fname_error" >
+                            <strong></strong>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <label class="input-label" for="lName"><span>*</span>Last Name</label>
+                        <input type="text" class="form-control" id="lname" name="lname"  placeholder="Smith">
+                        <span class="text-danger error-text lname_error" >
+                            <strong></strong>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-label" for="inputMail"><span>*</span>Email Address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="example@domain.com">
+                    <span class="text-danger error-text email_error" >
+                        <strong></strong>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-label" for="inputPhone"><span>*</span>Phone Number</label>
+                    <input type="text" class="form-control" id="inputPhone" name="inputPhone" placeholder="+91 123 456 789">
+                    <span class="text-danger error-text inputPhone_error" >
+                        <strong></strong>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-label" for="inputPhone"><span>*</span>Date of issue</label>
+                    <input type="date" class="form-control" id="dateofissue" name="dateofissue" >
+                    <span class="text-danger error-text inputPhone_error" >
+                        <strong></strong>
+                    </span>
+                  </div>
+                  <div class="form-group">
+                    <label class="input-label" for="inputMail"><span>*</span>state</label>
+                    <select class="form-control" onchange="toggleLGA(this);" id="state" name="state" >
+                      <option value="" selected="selected">Select State</option>
+                      <option value="Abia">Abia</option>
+                      <option value="Adamawa">Adamawa</option>
+                      <option value="AkwaIbom">AkwaIbom</option>
+                      <option value="Anambra">Anambra</option>
+                      <option value="Bauchi">Bauchi</option>
+                      <option value="Bayelsa">Bayelsa</option>
+                      <option value="Benue">Benue</option>
+                      <option value="Borno">Borno</option>
+                      <option value="Cross River">Cross River</option>
+                      <option value="Delta">Delta</option>
+                      <option value="Ebonyi">Ebonyi</option>
+                      <option value="Edo">Edo</option>
+                      <option value="Ekiti">Ekiti</option>
+                      <option value="Enugu">Enugu</option>
+                      <option value="FCT">FCT</option>
+                      <option value="Gombe">Gombe</option>
+                      <option value="Imo">Imo</option>
+                      <option value="Jigawa">Jigawa</option>
+                      <option value="Kaduna">Kaduna</option>
+                      <option value="Kano">Kano</option>
+                      <option value="Katsina">Katsina</option>
+                      <option value="Kebbi">Kebbi</option>
+                      <option value="Kogi">Kogi</option>
+                      <option value="Kwara">Kwara</option>
+                      <option value="Lagos">Lagos</option>
+                      <option value="Nasarawa">Nasarawa</option>
+                      <option value="Niger">Niger</option>
+                      <option value="Ogun">Ogun</option>
+                      <option value="Ondo">Ondo</option>
+                      <option value="Osun">Osun</option>
+                      <option value="Oyo">Oyo</option>
+                      <option value="Plateau">Plateau</option>
+                      <option value="Rivers">Rivers</option>
+                      <option value="Sokoto">Sokoto</option>
+                      <option value="Taraba">Taraba</option>
+                      <option value="Yobe">Yobe</option>
+                      <option value="Zamfara">Zamafara</option>
+                    </select>
+                    <span class="text-danger error-text state_error" >
+                        <strong></strong>
+                    </span>
+                  </div>
+                  
+                  <div class="form-group">
+                    <label class="input-label" for="inputMail"><span>*</span>Local government</label>
+                    <select class="form-control select-lga" name="lga" id="lga" >
+                      <option value="">select</option>
+                    </select>
+                    <span class="text-danger error-text lga_error" >
+                        <strong></strong>
+                    </span>
+                  </div>
+                  <div class="form-group check-gender">
+                    <span class="lebel-text"><span>*</span>Select Gender</span>
+                    <div class="custom-radio">
+                      <input type="radio" name="gender" value="male" class="custom-control-input" id="male">
+                      <label class="custom-control-label" for="male">Male</label>
+                    </div>
+                    <div class="custom-radio">
+                      <input type="radio" name="gender" class="custom-control-input" value="female" id="female">
+                      <label class="custom-control-label" for="female">Female</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="input-type-block">
+                  <div class="form-group">
+                    <div class="custom-file">
+                      <p class="input-label"><span>*</span> Upload Resume <span class="text">( File accepted: pdf. doc/ docx - Max size : 150kb )</span></p>
+                      <input type="file" class="custom-file-input form-control" id="validatedCustomFile"  name="userprofile">
+                      <label class="custom-file-label" for="validatedCustomFile"><span class="file-return">No file choosen</span></label>
+                      <span class="text-danger error-text userprofile_error" >
+                        <strong></strong>
+                    </span>
+                    </div>
+                  </div>  
+                  <div class="form-group">
+                    <div class="custom-checkbox">
+                      <input type="checkbox" class="custom-control-input" id="terms">
+                      <label class="custom-control-label" for="terms">I accept the <a href="#">Term of Conditions</a> and <a href="#">Privacy Policy</a></label>
+                    </div>
+                  </div>
+                </div>
+                <button type="submit" class="btn">Submit Application</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div> --}}
+    </div>
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    {{-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="{{ asset('assets/js/jquery.min.js') }}"></script> --}}
+    <script src="{{ asset('assets/js/jquerys.js') }}"></script>
+    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
+    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script src="{{ asset('assets/js/lga.min.js') }}"></script>
+
+
+    <script src="{{ asset('js/custom.js') }}"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+   
+  </body>
+
+<!-- Mirrored from uigaint.com/demo/html/anfra_2/job-2/job-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 26 Jan 2022 23:48:18 GMT -->
 </html>

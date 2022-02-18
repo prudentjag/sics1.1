@@ -10,7 +10,8 @@ class idController extends Controller
 {
     public function index(Request $request)
     {
-        return view('job');
+        $date = User::distinct()->get(['dateofissue']);
+        return view('job' , compact('date'));
     }
     public function create(Request $request)
     {
@@ -38,6 +39,7 @@ class idController extends Controller
             'inputPhone' => $request->inputPhone,
             'gender' => $request->gender,
             'lga' => $request->lga,
+            'dateofissue' => $request->dateofissue,
             'userprofile' => $new_name,
         ];
         $create = User::create($data);
@@ -50,9 +52,9 @@ class idController extends Controller
     public function idtables(Request $request)
     {
         if($request->has('date')){
-            $date =  $request('date');
+            $date =  $request->date;
             $current_timestamp = Carbon::now()->toDateTimeString();
-            $data = User::where('issued_at', $date )->paginate(10);
+            $data = User::where('dateofissue', $date )->paginate(10);
         }
         $current_timestamp = Carbon::now()->toDateTimeString();
         //$data = User::where("created_at", "like", "%{$current_timestamp}%")->paginate(10);
@@ -63,8 +65,8 @@ class idController extends Controller
 
     public function sortby(Request $request)
     {
-        $date =  $request('date');
-        $data = User::where('issued_at', $date )->paginate(10);
+        $date =  $request->date;
+        $data = User::where('dateofissue', $date )->paginate(10);
         return view('cards' , compact('data'));
     }
 }

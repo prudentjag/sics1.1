@@ -44,7 +44,21 @@
                   <h3>Each one aid one Jamb ID system</h3>
                   <ul>
                     <li><img src="images/clock.png" alt=""><a href="/ids">Cards</a> </li>
-                    <li><img src="images/clock.png" alt="">sort cards</li>
+                    <li class="viewsort"><img src="images/clock.png" alt="">sort cards</li>
+                    <li>
+                      <form action="/sort" method="post" class="sortclass">
+                        @csrf
+                        <div class="form-group">
+                          <select class="form-control" name="date" id="date" >
+                            <option value="">select</option>
+                            @foreach ($date as $dates)
+                              <option value="{{ $dates->dateofissue }}">{{ $dates->dateofissue }}</option>
+                            @endforeach
+                          </select>
+                      </div>
+                      <button type="submit" class="btn">fetch</button>
+                      </form>
+                    </li>
                   </ul>
                 </div>
                 {{-- <p class="salary">Salary Range: <strong>$(500 - 1500)</strong></p> --}}
@@ -96,6 +110,13 @@
                     </span>
                   </div>
                   <div class="form-group">
+                    <label class="input-label" for="inputPhone"><span>*</span>Date of issue</label>
+                    <input type="date" class="form-control" id="dateofissue" name="dateofissue" >
+                    <span class="text-danger error-text inputPhone_error" >
+                        <strong></strong>
+                    </span>
+                  </div>
+                  <div class="form-group">
                     <label class="input-label" for="inputMail"><span>*</span>state</label>
                     <select class="form-control" onchange="toggleLGA(this);" id="state" name="state" >
                       <option value="" selected="selected">Select State</option>
@@ -141,6 +162,7 @@
                         <strong></strong>
                     </span>
                   </div>
+                  
                   <div class="form-group">
                     <label class="input-label" for="inputMail"><span>*</span>Local government</label>
                     <select class="form-control select-lga" name="lga" id="lga" >

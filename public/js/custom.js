@@ -15,6 +15,9 @@ $(document).ready(function() {
     }
   });
 
-  
+  $('.sortclass').css('display', 'none')
+  $(".viewsort").on('click', function () {
+    $('.sortclass').css('display', 'block')
+  })
 
 })

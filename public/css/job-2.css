@@ -87,7 +87,7 @@
 }
 
 .ugf-wraper {
-  background: url(../images/bg/job-1-bg.jpg) no-repeat center bottom;
+  background: url(../images/bg/jobn.jpg) no-repeat center bottom;
   background-size: cover;
   background-attachment: fixed;
 }
@@ -224,14 +224,14 @@
 .ufg-job-application-wrapper .job-application-form h4 {
   font-size: 1.8rem;
   font-weight: 700;
-  color: #1c2437;
+  color: #ffffff;
   font-family: "Roboto", sans-serif;
   margin-bottom: 20px;
 }
 
 .ufg-job-application-wrapper .job-application-form h4 span {
   font-weight: 400;
-  color: #546274;
+  color: #ffffff;
 }
 
 .ufg-job-application-wrapper .job-application-form h4 .required {
@@ -256,7 +256,7 @@
   left: 0;
   font-size: 1.2rem;
   font-weight: 700;
-  color: #1c2437;
+  color: #ffffff;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
 }
@@ -341,7 +341,7 @@
 .ufg-job-application-wrapper .job-application-form .form-group .input-label {
   font-size: 1.2rem;
   font-weight: 700;
-  color: #1c2437;
+  color: #ffffff;
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
 }
