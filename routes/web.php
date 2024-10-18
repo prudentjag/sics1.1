@@ -14,15 +14,15 @@ use App\Http\Controllers\idController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('cards');
-// });
-Route::controller(idController::class)->group(function () {
-    Route::get('/', 'index');
-    Route::get('/ids', 'idtables');
-    Route::post('/sort', 'sortby');
-    Route::post('/create', 'create');
+Route::get('/', function () {
+    return view('index');
 });
+// Route::controller(idController::class)->group(function () {
+//     Route::get('/', 'index');
+//     Route::get('/ids', 'idtables');
+//     Route::post('/sort', 'sortby');
+//     Route::post('/create', 'create');
+// });
 
 Route::middleware('auth:jwt')->get('/protected', function () {
     // Protected route for JWT-authenticated users
