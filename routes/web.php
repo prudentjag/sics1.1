@@ -23,3 +23,7 @@ Route::controller(idController::class)->group(function () {
     Route::post('/sort', 'sortby');
     Route::post('/create', 'create');
 });
+
+Route::middleware('auth:jwt')->get('/protected', function () {
+    // Protected route for JWT-authenticated users
+});

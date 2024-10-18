@@ -5,6 +5,7 @@ use App\Models\User;
 use Carbon\Carbon;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
 
 class idController extends Controller
 {
@@ -15,7 +16,7 @@ class idController extends Controller
     }
     public function create(Request $request)
     {
-        $validate = \Validator::make($request->all(), [
+        $validate = Validator::make($request->all(), [
             'fname'=> 'required',
             'lname' => 'required',
             'email' => 'required |email|unique:users,email',
@@ -25,7 +26,7 @@ class idController extends Controller
             'userprofile' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:5120',
         ]);
 
-        if(!$validate->passes()){
+        if($validate->failed()){
             return response()->json(['code'=>0 , 'error'=>$validate->errors()->toArray()]);
             exit();
         }
