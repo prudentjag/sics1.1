@@ -22,7 +22,7 @@ class CreateUsersTable extends Migration
             $table->string('designation')->nullable();
             $table->foreignId('company_id')->constrained()->onDelete('cascade');
             $table->string('role')->default('staff');
-            $table->string('password')->after('email');
+            $table->string('password');
             $table->timestamps();
         });
 

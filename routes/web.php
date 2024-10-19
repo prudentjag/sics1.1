@@ -17,6 +17,9 @@ use App\Http\Controllers\idController;
 Route::get('/', function () {
     return view('index');
 });
+Route::get('/login', function () {
+    return view('Auth.login');
+});
 // Route::controller(idController::class)->group(function () {
 //     Route::get('/', 'index');
 //     Route::get('/ids', 'idtables');
