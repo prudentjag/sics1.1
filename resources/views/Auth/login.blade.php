@@ -142,9 +142,29 @@
         <!-- main @e -->
     </div>
     <!-- app-root @e -->
+    @if (Session::has('fail'))
+        <script>
+            Swal.fire({
+                title: "Error!",
+                text: "{{ Session::get('fail') }}",
+                icon: "error"
+            });
+        </script>
+    @endif
+
+    @if (Session::has('success'))
+        <script>
+            Swal.fire({
+                title: "Success!",
+                text: "{{ Session::get('success') }}",
+                icon: "success"
+            });
+        </script>
+    @endif
     <!-- JavaScript -->
     <script src="./assets/js/bundle.js?ver=3.2.3"></script>
     <script src="./assets/js/scripts.js?ver=3.2.3"></script>
+    <script src="./js/sics.js"></script>
     <!-- select region modal -->
     <div class="modal fade" tabindex="-1" role="dialog" id="region">
         <div class="modal-dialog modal-lg" role="document">
